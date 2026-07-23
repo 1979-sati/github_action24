@@ -1,4 +1,4 @@
-name: My First Workflow
+name: CI Pipeline
 
 on:
   push:
@@ -6,9 +6,12 @@ on:
       - main
 
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Print Message
-        run: echo "Hello Satish! Welcome to GitHub Actions."
+        run: echo "Hello GitHub Actions"
